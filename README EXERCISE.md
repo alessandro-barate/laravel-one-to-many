@@ -22,7 +22,7 @@ Buon lavoro e buon divertimento!
 
 # Roadmap per la gestione delle categorie e dei tags
 
--   [] Creare tabella types (migration + model)
+-   [x] Creare tabella types (migration + model)
 -   [] Seeder per la tabella types -> array di dati
 -   [] Creare relazione tra tabella posts e tabella types (migration)
 -   [] Valutare tipo di relazione tra le tabelle (restricted, null, noaction)

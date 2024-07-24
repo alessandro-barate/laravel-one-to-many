@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
 
 class TypeSeeder extends Seeder
 {
@@ -12,6 +15,19 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+        Type::truncate();
+
+        $types = ['Frontend', 'Backend', 'Data Analytics', 'Cloud', 'Machine Learning', 'Fullstack'];
+
+        foreach($types as $type) {
+
+            $new_type = new Type();
+
+            $new_type->title = $type;
+            $new_type->slug = Str::of($type)->slug();
+
+            $new_type->save();
+        }
     }
 }
