@@ -1,0 +1,12 @@
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.img-container img {
+    width: 70%;
+    object-fit: cover;
+}
