@@ -25,7 +25,7 @@
 
             <hr>
 
-            Type: {{ $post->type->title }}
+            Argomento: {{ $post->type->title }}
 
             <hr>
 

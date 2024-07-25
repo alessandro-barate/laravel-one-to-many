@@ -21,7 +21,7 @@ class TypeSeeder extends Seeder
 
         Type::truncate();
 
-        $types = ['Frontend', 'Backend', 'Data Analytics', 'Cloud', 'Machine Learning', 'Fullstack'];
+        $types = ['Frontend', 'Backend', 'Data Analytics', 'Cloud', 'Machine Learning', 'Fullstack', 'System Administrator', 'Firmware Development', 'App Development', 'Cybersecurity'];
 
         foreach($types as $type) {
 
