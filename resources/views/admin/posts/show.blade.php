@@ -25,6 +25,10 @@
 
             <hr>
 
+            Type: {{ $post->type->title }}
+
+            <hr>
+
             <div class="mt-5">
                 <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Back to the posts list</a>
             </div>
