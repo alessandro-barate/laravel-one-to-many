@@ -24,8 +24,8 @@ Buon lavoro e buon divertimento!
 
 -   [x] Creare tabella types (migration + model)
 -   [x] Seeder per la tabella types -> array di dati
--   [] Creare relazione tra tabella posts e tabella types (migration)
--   [] Valutare tipo di relazione tra le tabelle (restricted, null, noaction)
+-   [x] Creare relazione tra tabella posts e tabella types (migration)
+-   [x] Valutare tipo di relazione tra le tabelle (restricted, null, noaction)
 -   [] Istruire Laravel sulla cardinalità / relazione tra posts e types
 -   [] Modificare vista (create e update) e controller per creazione/modifica posts
 -   [] Modificare vista (show) pe rappresentare le relazioni
