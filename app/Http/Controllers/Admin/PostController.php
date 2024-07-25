@@ -123,6 +123,7 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->content = $data['content'];
         $post->slug = $data['slug'];
+        $post->type_id = $data['type_id'];
 
         $post->update($data);
 

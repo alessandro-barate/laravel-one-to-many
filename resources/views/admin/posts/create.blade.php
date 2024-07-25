@@ -34,7 +34,7 @@
                     <select class="form-select" aria-label="Default select example" name="type_id">
                         <option value="" selected>-- Seleziona l'argomento --</option>
                         @foreach ($types as $type)
-                        <option value="{{ $type->id }}">{{ $type->title }}</option>      
+                        <option value="{{ $type->id }}" @if (old('type_id') == $type->id) selected @endif>{{ $type->title }}</option>      
                         @endforeach
                     </select>
                 </div>
