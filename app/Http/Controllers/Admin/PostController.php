@@ -62,6 +62,11 @@ class PostController extends Controller
         $post->content = $data['content'];
         $post->slug = $data['slug'];
         $post->cover_image = $img_path;
+        $post->type_id = $data['type_id']
+
+        // $post->type_id = $request->input('type_id');
+
+        ;
 
         $post->save();
 
