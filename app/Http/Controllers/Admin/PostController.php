@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Type;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -18,9 +19,10 @@ class PostController extends Controller
      */
     public function index()
     {
-
         $posts = Post::all();
-    
+
+        // $posts = Post::where('user_id', Auth::user()->id)->get(); ---> questo per avere in pagina principale
+        // solo i post creati dall'utente loggato
 
         return view('admin.posts.index', compact('posts'));
         
@@ -44,8 +46,9 @@ class PostController extends Controller
         // Validazione dei dati
         $data = $request->validated();
 
+        $current_user = Auth::user()->id;
+
         // Gestione immagine
-        
         $img_path = $request->hasFile('cover_image') ? Storage::put('uploads', $data['cover_image']) : NULL;
         
 
@@ -61,7 +64,8 @@ class PostController extends Controller
         $post->content = $data['content'];
         $post->slug = $data['slug'];
         $post->cover_image = $img_path;
-        $post->type_id = $data['type_id']
+        $post->type_id = $data['type_id'];
+        $post->user_id = $current_user;
 
         // $post->type_id = $request->input('type_id');
 

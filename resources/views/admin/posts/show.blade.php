@@ -7,9 +7,9 @@
         <div class="col mt-4">
 
             {{-- Intestazione --}}
-            <div class="d-flex justify-content-between mb-3 align-items-center">
+            <div class="mb-5">
                 <h1>{{ $post->title }}</h1>
-                {{-- <button class="btn btn-secondary">Create new post</button> --}}
+                <p>Created by: {{ $post->user?->name ?: 'Capitan Tuta' }}</p>
             </div>
             {{-- FINE Intestazione --}}
 
