@@ -25,7 +25,8 @@
                 <thead>
                   <tr>
                     <th scope="col" class="col">#</th>
-                    <th scope="col" class="col-7">TITLE</th>
+                    <th scope="col" class="col-2">USER</th>
+                    <th scope="col" class="col-5">TITLE</th>
                     <th scope="col" class="col-3">SLUG</th>
                     <th scope="col" class="col"></th>
                   </tr>
@@ -34,6 +35,7 @@
                     @foreach ($posts as $post)
                     <tr>
                         <th scope="row">{{ $post->id }}</th>
+                        <td> {{ $post->user?->name ?: 'Capitan Tuta' }} </td>
                         <td> {{ $post->title }} @if ($post->cover_image)
                             - <i class="fas fa-image"></i> 
                         @endif</td>
