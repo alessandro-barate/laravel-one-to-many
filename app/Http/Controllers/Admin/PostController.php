@@ -45,10 +45,9 @@ class PostController extends Controller
         $data = $request->validated();
 
         // Gestione immagine
-        $img_path = null;
-        if(isset($data['cover_image'])) {
-            $img_path = Storage::put('uploads', $data['cover_image']);
-        }
+        
+        $img_path = $request->hasFile('cover_image') ? Storage::put('uploads', $data['cover_image']) : NULL;
+        
 
         // Gestione slug
         $slug = Str::of($data['title'])->slug('-');
@@ -89,7 +88,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit' , compact('post'));
+        $types = Type::all();
+
+        return view('admin.posts.edit' , compact('post', 'types'));
     }
 
     /**
