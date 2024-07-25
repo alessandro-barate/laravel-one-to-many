@@ -14,5 +14,10 @@ class Post extends Model
 
     // Qui i campi che non vogliamo abilitare al mass update
     // protected $guarded = [];
+
+    public function type() 
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
 
