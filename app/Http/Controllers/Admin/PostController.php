@@ -108,25 +108,19 @@ class PostController extends Controller
         $data['slug'] = Str::of($data['title'])->slug();
 
         // Gestione immagine
-        if(isset($data['cover_image'])) {
-
-            // Cancello l'immagine se gia presente
-            if ($post->cover_image) {
-                Storage::delete($post->cover_image);      
-            }
-
-            // Salvo la nuova immagine
-            $img_path = Storage::put('uploads', $data['cover_image']);
-            $post->cover_image = $img_path;
-        }
+        $img_path = $request->hasFile('cover_image') ? $request->cover_image->store('uploads') : NULL;
 
         // Assegno valori
-        $post->title = $data['title'];
-        $post->content = $data['content'];
-        $post->slug = $data['slug'];
-        $post->type_id = $data['type_id'];
+        // $post->title = $data['title'];
+        // $post->content = $data['content'];
+        // $post->slug = $data['slug'];
+        // $post->type_id = $data['type_id'];
+        
 
         $post->update($data);
+
+        $post->cover_image = $img_path;
+        $post->save();
 
         return redirect()->route('admin.posts.index')->with('message', 'Post #' . $post->id . ' correctly updated');
     }

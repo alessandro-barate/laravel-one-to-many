@@ -30,3 +30,10 @@ Buon lavoro e buon divertimento!
 -   [] Modificare vista (create e update) e controller per creazione/modifica posts
 -   [] Modificare vista (show) pe rappresentare le relazioni
 -   [] Creare CRUD types
+
+## Roadmap per la gestione delle users e posts
+
+-   [] Creare relazione tra tabella posts e tabella users (migration)
+-   [] Valutare tipo di relazione tra le tabelle (restricted, null, noaction)
+-   [] Istruire Laravel sulla cardinalità / relazione tra posts e users
+-   []Modificare vista (create e update) e controller per creazione/modifica posts
