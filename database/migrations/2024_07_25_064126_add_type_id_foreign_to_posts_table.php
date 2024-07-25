@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('posts', function (Blueprint $table) {
             
             // Creo il campo
-            $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('type_id')->nullable();
 
             // Creo la chiave esterna
             $table->foreign('type_id')
@@ -32,7 +32,12 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+
+            // Cancello il vincolo tra le tabelle
+            $table->dropForeign('posts_type_id_foreign');
+
+            // Cancello il campo
+            $table->dropColumn('type_id');
         });
     }
 };
