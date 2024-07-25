@@ -25,7 +25,7 @@
 
             <hr>
 
-            Argomento: {{ $post->type->title }}
+            Argomento: {{ $post->type?->title ?: 'Argomento non definito' }}
 
             <hr>
 

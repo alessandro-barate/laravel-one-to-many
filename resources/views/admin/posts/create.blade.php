@@ -30,6 +30,16 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Post argument</label>
+                    <select class="form-select" aria-label="Default select example" name="type_id">
+                        <option value="" selected>-- Seleziona l'argomento --</option>
+                        @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->title }}</option>      
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label for="cover_image" class="form-label">Cover image</label>
                     <input class="form-control" type="file" id="cover_image" name="cover_image">
                 </div>
